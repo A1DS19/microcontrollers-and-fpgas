@@ -45,7 +45,7 @@ register-level L476 version; don't copy-build them (CubeIDE projects, wrong chip
 | 015 task_scheduler, 016 cmsis_task_scheduler | 10 (016 = same capstone rewritten with CMSIS helpers) |
 
 Bonus in `course-code/Documents/`: the ARM Cortex-M3 and M4 **Generic User Guides** —
-the register-level reference the NVIC/SCB/fault lessons keep citing. Workspace `docs/`
+the register-level reference the NVIC/SCB/fault lessons keep citing. Workspace `stm32/docs/`
 has the M4 *datasheet* and *Technical Reference Manual*; the Generic User Guide is the
 third, most lesson-friendly view (programmer's model + register descriptions).
 

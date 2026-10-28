@@ -56,3 +56,20 @@ Sub-decisions:
 The workspace will hold multiple online-course projects over time, so each project dir
 carries its own Makefile and the root stays free of build plumbing. The initial root
 forwarding Makefile (hardcoded to one project) was removed the same day it was added.
+
+## 2026-10-28 — FPGA becomes the main path; workspace renamed and split
+
+The repo is renamed `stm32-projects` → `microcontrollers-and-fpgas` and split into `stm32/`
+(both completed course projects + their reference docs) and `fpga/` (new main path). The final
+goal is low-latency FPGA networking + design verification, chosen because it is specialized,
+remote-friendly from Costa Rica, and has a local fallback (semiconductor verification).
+Defense/space were ruled out (ITAR / citizenship).
+
+Sub-decisions:
+- **The remaining FastBit MCU courses become good-to-know**, not deleted from the plan —
+  MCU1 ranks highest among them (drivers for one's own FPGA peripheral on Zynq/soft CPUs).
+- **The STM32 work counts as the CPU half** of FPGA SoC work (AMBA buses, startup/linker,
+  exceptions) and the Nucleo stays on the bench as a stimulus/host tool for FPGA projects.
+- **Workspace docs (`docs/course-progression.md`) stay at the root**; STM32-only references
+  (pinout, RM0351, UM1724, Cortex-M4 PDFs, cli-workflow.md) moved to `stm32/docs/`.
+- **Root `.vscode/` stays** at the workspace root, paths now `${workspaceFolder}/stm32/<project>`.

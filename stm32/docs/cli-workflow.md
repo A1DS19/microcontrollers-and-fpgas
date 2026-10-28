@@ -11,7 +11,7 @@ Write a CubeMX script, e.g. `gen.txt`:
 loadboard NUCLEO-L476RG allmodes
 project name my-app
 project toolchain CMake
-project path /home/dev/projects/stm32-projects/my-app
+project path /home/dev/projects/microcontrollers-and-fpgas/stm32/my-app
 project generate
 exit
 ```

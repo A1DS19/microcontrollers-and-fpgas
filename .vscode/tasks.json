@@ -5,7 +5,7 @@
       "label": "build microcontroller-embedded-c-programming",
       "type": "shell",
       "command": "make build",
-      "options": { "cwd": "${workspaceFolder}/microcontroller-embedded-c-programming" },
+      "options": { "cwd": "${workspaceFolder}/stm32/microcontroller-embedded-c-programming" },
       "group": "build",
       "problemMatcher": ["$gcc"]
     },
@@ -13,7 +13,7 @@
       "label": "build embedded-system-programming-on-arm-cortex-m3m4",
       "type": "shell",
       "command": "make build",
-      "options": { "cwd": "${workspaceFolder}/embedded-system-programming-on-arm-cortex-m3m4" },
+      "options": { "cwd": "${workspaceFolder}/stm32/embedded-system-programming-on-arm-cortex-m3m4" },
       "group": { "kind": "build", "isDefault": true },
       "problemMatcher": ["$gcc"]
     }

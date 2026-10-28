@@ -2,12 +2,30 @@
 
 ## Goal
 
-Work through the FastBit course path on real hardware — every lesson register-level,
-built/flashed/verified from the terminal on the Nucleo-L476RG. Current course:
-"Embedded System Programming on ARM Cortex-M3/M4" in
-`embedded-system-programming-on-arm-cortex-m3m4/` (course map: its `SYLLABUS.md`).
+Low-latency FPGA networking + design verification: an HFT-style feed handler built in
+hardware and verified with cocotb, as the portfolio for remote FPGA / verification roles.
+Same bench discipline as the STM32 era — CLI-first, every design proven (simulation first,
+then hardware). Path: docs/course-progression.md; phases: `fpga/README.md`.
 
-## Milestones — Cortex-M processor course era
+## Milestones — FPGA era (main path)
+
+- [x] Workspace renamed `stm32-projects` → `microcontrollers-and-fpgas`; STM32 work moved to
+  `stm32/`, `fpga/` created; docs realigned to the FPGA goal (2026-10-28)
+- [ ] Board bought (Arty A7-100T) + toolchain installed (Verilator, Icarus, GTKWave, cocotb, Vivado)
+- [ ] Corpeño Part 1 (Verilog) + HDLBits
+- [ ] Corpeño Parts 2–3 (Basic FPGA, EDA Tools)
+- [ ] cocotb tutorial; first module with a passing testbench
+- [ ] Corpeño Part 4 (Microprocessor Design)
+- [ ] Verification course (SystemVerilog / UVM)
+- [ ] Phase 1 — UART, FIFOs, AXI-Stream on the board
+- [ ] Phase 2 — Ethernet → IP → UDP parsed in hardware
+- [ ] Phase 3 — ITCH feed handler + order book, latency in cycles
+- [ ] Phase 4 — replay testbench vs Python model, public write-up
+- [ ] Bridge: SPI register file in the FPGA driven from the Nucleo (optional)
+
+## Milestones — STM32 era (complete; further MCU courses are good-to-know)
+
+### Cortex-M processor course
 
 - [x] Course project scaffolded (cloned from the Embedded C project shape) + 375-slide
   deck distilled into `SYLLABUS.md`; banner/LED scaffold verified on hardware (2026-08-23)
@@ -22,7 +40,7 @@ built/flashed/verified from the terminal on the Nucleo-L476RG. Current course:
 - [x] **COURSE COMPLETE** — "Embedded System Programming on ARM Cortex-M3/M4" (FastBit), every
   section register-level and verified on the Nucleo-L476RG (2026-08-30); finish ritual run
 
-## Milestones — Embedded C course era (complete)
+### Embedded C course
 
 - [x] Workspace reset: old lesson projects deleted, single bare-metal project seeded from
   the empty-project shape, Makefile + VS Code debug wired (2026-08-17)
@@ -40,12 +58,12 @@ built/flashed/verified from the terminal on the Nucleo-L476RG. Current course:
   lesson register-level and verified on the Nucleo-L476RG (2026-08-22)
 - [ ] printf decoded in KingstVIS off PA2 (Morpho tap) — carried over from bring-up era
 
-## Done — bring-up era (pre-2026-08-17, projects since deleted; history in git)
+### Bring-up era (pre-2026-08-17, projects since deleted; history in git)
 
 - [x] CubeCLT + SWD, headless CubeMX CMake generation, blink/UART/EXTI lessons, CLI and
   VS Code debug, `stm32-new-project` skill, CubeMX2 CLI probe (L4 incompatible by design)
 
-## Later / maybe
+## Later / maybe (STM32)
 
 - I²C/SPI sensor on the breadboard with protocol decode
 - A HAL2-era board lesson via CubeMX2's real CLI
