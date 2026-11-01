@@ -20,6 +20,8 @@ compile_commands.json
 
 # CubeMX regenerated state (the .ioc is the source of truth)
 .mxproject
+# HAL + CMSIS copies CubeMX drops into each generated project (~96 MB); regenerate from the .ioc
+Drivers/
 
 # Eclipse workspace
 .metadata/
