@@ -47,3 +47,4 @@ VS Code (workspace root opened): F5 builds, flashes, and halts at `main` (Cortex
 - `docs/UM1724_nucleo64_user_manual.pdf` — Nucleo board wiring, solder bridges, headers
 - `docs/arm_cortexm4_processor.pdf`, `docs/Arm-Cortex-M4-Processor-Datasheet.pdf` — the core itself
 - [docs/cli-workflow.md](docs/cli-workflow.md) — headless-CubeMX recipe for future HAL projects
+- [docs/f407-vs-l476.md](docs/f407-vs-l476.md) — translating the FastBit courses' F407 addresses, clocks and drivers to the L476RG

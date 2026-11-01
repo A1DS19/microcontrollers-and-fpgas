@@ -73,7 +73,8 @@ I3C, SPI, GPIO (Protocol Pro).
 
 - Bench board: Nucleo-L476RG. FastBit videos use STM32F407 Discovery / Nucleo-F446 — same
   Cortex-M4 core, slightly different peripheral versions; adapt via RM0351 instead of
-  copy-typing. That adaptation is a feature, not a bug.
+  copy-typing. That adaptation is a feature, not a bug. Lookup tables:
+  [stm32/docs/f407-vs-l476.md](../stm32/docs/f407-vs-l476.md).
 
 ## Completed
 
