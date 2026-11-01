@@ -43,7 +43,7 @@ VS Code (workspace root opened): F5 builds, flashes, and halts at `main` (Cortex
 ## Reference docs
 
 - [docs/pinout/](docs/pinout/) — verified per-peripheral Nucleo-L476RG pinout diagrams
-- `docs/RM0351_stm32l476_reference_manual.pdf` — the register bible (1,906 pages)
+- `docs/rm0351-stm32l47xxx-stm32l48xxx-stm32l49xxx-and-stm32l4axxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf` — the register bible, RM0351 Rev 11 (1,893 pages)
 - `docs/UM1724_nucleo64_user_manual.pdf` — Nucleo board wiring, solder bridges, headers
 - `docs/arm_cortexm4_processor.pdf`, `docs/Arm-Cortex-M4-Processor-Datasheet.pdf` — the core itself
 - [docs/cli-workflow.md](docs/cli-workflow.md) — headless-CubeMX recipe for future HAL projects
