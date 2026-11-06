@@ -13,11 +13,10 @@ _2026-11-05 (STM32 clean slate — starting the ARM GNU Assembly course)_
   entries in `agents/decisions.md`.
 
 ## State
-- This reset is committed and pushed on `feat/stm32-bare-metal-restart`. `main` is untouched, so
-  it keeps the old files until the branch is merged.
+- This reset is merged to `main` and pushed. New work goes on a fresh feature branch.
 - `stm32/` holds only the empty `arm-gnu-assembly-programming-from-ground-up/`, which git won't
   track until it has a file.
-- The branch deletes 154 tracked files, on purpose. Don't restore them unless asked. Commit
+- The reset deleted 154 tracked files, on purpose. Don't restore them unless asked. Commit
   `a713127` keeps them, including the reference PDFs: `git show a713127:stm32/docs/<file>`.
 - The course's board and IDE are unconfirmed; the page names neither. Lecture titles use `ODR` and
   `BSRR`, so it's probably an STM32, not TI as first guessed (inference only).
