@@ -3,7 +3,7 @@
 Hardware learning workspace, driven entirely from the CLI. `stm32/` holds the current STM32
 courses; `fpga/` is the main path that follows them (final goal: low-latency FPGA networking +
 design verification). One directory per online-course project, each self-contained with its own
-Makefile (no workspace-level build plumbing).
+build (no workspace-level build plumbing).
 
 **Main path**:
 The FPGA track in `fpga/` and docs/course-progression.md — Corpeño's Verilog series, cocotb,
@@ -12,8 +12,9 @@ _Avoid_: calling the STM32 FastBit courses "the path" — they are good-to-know
 
 **ARM GNU Assembly course**:
 EmbeddedExpertIO's ARM GNU Assembly Programming From Ground Up, the current course and the first
-on the path. Project directory: `stm32/arm-gnu-assembly-programming-from-ground-up/`, folder only
-so far. Its board is unconfirmed.
+on the path. Project directory: `stm32/arm-gnu-assembly-programming-from-ground-up/`, with one
+CubeIDE project per lesson, on the Nucleo-L476RG for now. The instructor uses the STM32F411RETx,
+the chip on the NUCLEO-F411RE.
 
 **Driver courses**:
 Israel Gbati's Ground Up, Advanced and HAL APIs courses, in that order. They follow the ARM GNU

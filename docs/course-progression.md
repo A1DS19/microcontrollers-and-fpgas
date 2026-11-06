@@ -14,18 +14,15 @@ the driver courses together.
 
 | # | Course | Status | Project dir |
 |---|--------|--------|-------------|
-| 1 | [ARM GNU Assembly Programming From Ground Up](https://study.embeddedexpert.io/p/arm-gnu-assembly-programming-from-ground-up) (EmbeddedExpertIO) | **next up** | [`stm32/arm-gnu-assembly-programming-from-ground-up/`](../stm32/arm-gnu-assembly-programming-from-ground-up/) |
+| 1 | [ARM GNU Assembly Programming From Ground Up](https://study.embeddedexpert.io/p/arm-gnu-assembly-programming-from-ground-up) (EmbeddedExpertIO) | **in progress** | [`stm32/arm-gnu-assembly-programming-from-ground-up/`](../stm32/arm-gnu-assembly-programming-from-ground-up/) |
 | 2 | [Embedded Systems Bare-Metal Programming Ground Up (STM32)](https://www.udemy.com/course/embedded-systems-bare-metal-programming/) (Israel Gbati) | — | — |
 | 3 | [Advanced Embedded Systems Bare-Metal Programming Ground Up](https://www.udemy.com/course/embedded-systems-advance-bare-metal-programming/) | — | — |
 | 4 | [Embedded Systems STM32 HAL APIs Driver Development](https://www.udemy.com/course/embedded-systems-stm32-hal-apis-driver-development/) | — | — |
 
-Bench boards:
-
-- **Assembly course:** not confirmed; the course page names no board or IDE. Lecture titles use
-  `ODR` and `BSRR`, so it's probably an STM32 (inference). Sections 1–8 are instruction set only,
-  so start on the Nucleo-L476RG. Buy a matching board at section 9 if translating the drivers
-  gets in the way.
-- **Driver courses:** NUCLEO-F411RE (to buy).
+Bench board for all four courses: NUCLEO-F411RE (to buy). The assembly course's instructor uses
+the STM32F411RETx, the chip on that board. The assembly course's projects are in CubeIDE and
+target the Nucleo-L476RG for now: sections 1–8 are instruction set only, so they run on it with
+its own startup and linker files.
 
 ### ARM GNU Assembly course map
 
@@ -129,7 +126,7 @@ I3C, SPI, GPIO (Protocol Pro).
 
 ### Hardware notes (STM32)
 
-- Driver courses: NUCLEO-F411RE, chosen so the videos can be typed along with directly.
+- Assembly and driver courses: NUCLEO-F411RE, chosen so the videos can be typed along with directly.
 - FastBit courses: Nucleo-L476RG. FastBit videos use STM32F407 Discovery / Nucleo-F446 — same
   Cortex-M4 core, slightly different peripheral versions; adapt via RM0351.
 

@@ -116,3 +116,17 @@ Sub-decisions:
 - **Larger resets were rejected:** deleting `fpga/` and `agents/` as well, or rewriting git history.
 - **This log and `fpga/README.md` were left as they are,** so earlier entries here still mention
   the finished courses as history.
+
+## 2026-11-05 — The assembly course runs on the STM32F411RE
+
+The user reports the instructor uses the STM32F411RETx, the chip on the NUCLEO-F411RE. That
+settles the open board question above: one board covers the assembly course and the driver
+courses, so the videos can be typed along with directly. The L476 stays an option for the
+instruction-set sections only.
+
+## 2026-11-05 — The assembly course is worked in CubeIDE, on the L476 to start
+
+The user created the first lesson projects in CubeIDE, one project per lesson, targeting the
+STM32L476RG. This keeps the course close to the videos and starts it without waiting for a new
+board. "No IDE in the loop" no longer holds for this course; the Makefile plan stays for the
+driver courses.

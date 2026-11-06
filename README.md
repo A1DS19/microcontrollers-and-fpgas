@@ -17,7 +17,7 @@ as AHB/APB; Zynq and soft CPUs boot through the same startup file + linker scrip
 | [`docs/course-progression.md`](docs/course-progression.md) | The whole learning path: STM32 courses + FPGA main path + good-to-know track + completion log | Living document |
 | `agents/` | Workspace vocabulary, decisions, roadmap, session handoff | |
 
-Each project directory is self-contained with its own Makefile; the root has no build plumbing.
+Each project directory is self-contained with its own build; the root has no build plumbing.
 
 ## Where to start
 

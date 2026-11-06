@@ -3,15 +3,16 @@
 Hardware learning workspace, CLI-first. **Final goal: low-latency FPGA networking + design
 verification** (HFT-style feed handler in hardware, cocotb-verified). Two areas:
 
-- `stm32/` — **current focus**, bare-metal STM32 courses; CubeCLT builds, flashes and debugs, no
-  IDE in the loop. In progress: `stm32/arm-gnu-assembly-programming-from-ground-up/` (ARM GNU
-  Assembly course; folder only so far, board unconfirmed). Three driver courses follow it (order
-  in docs/course-progression.md). Other MCU courses are **good-to-know**, not the path.
+- `stm32/` — **current focus**, bare-metal STM32 courses. In progress:
+  `stm32/arm-gnu-assembly-programming-from-ground-up/` (ARM GNU Assembly course), worked in
+  CubeIDE with one project per lesson, on the Nucleo-L476RG for now (the instructor uses the
+  F411RE). Three driver courses follow it (order in docs/course-progression.md). Other MCU
+  courses are **good-to-know**, not the path.
 - `fpga/` — the **main path**, not started; it follows the STM32 courses. Plan, toolchain,
   resources: `fpga/README.md`. First course: Corpeño *FPGA Embedded Design* Part 1 (Verilog) +
   HDLBits — see docs/course-progression.md.
 
-Every project directory is self-contained with its own Makefile; the root has no build plumbing.
+Every project directory is self-contained with its own build; the root has no build plumbing.
 
 ## FPGA conventions (planned)
 
@@ -25,15 +26,19 @@ Every project directory is self-contained with its own Makefile; the root has no
 ### Stack
 
 - Nucleo-L476RG (STM32L476RG, on-board ST-LINK V2), on the bench
-- NUCLEO-F411RE (STM32F411RE, to buy) for the driver courses
+- NUCLEO-F411RE (STM32F411RE, to buy) for the assembly and driver courses
+- STM32CubeIDE for the assembly course
 - STM32CubeCLT 1.22.0 (`/opt/st/stm32cubeclt_1.22.0/`): arm-none-eabi GCC 14.3, CMake + Ninja, `STM32_Programmer_CLI`, `ST-LINK_gdbserver`
 - CMSIS headers only (no HAL sources) from `~/STM32Cube/Repository/`: `STM32Cube_FW_L4_V1.18.2/` and `STM32Cube_FW_F4_V1.28.3/`
 - Kingst LA2016 logic analyzer, KingstVIS in `~/Apps/KingstVIS/`
 
-### Run & test (planned)
+### Run & test
 
-No project exists yet. New projects take their Makefile from the `stm32-new-project` skill's
-assets — `cd` into `stm32/<project>` and:
+The assembly course's projects are CubeIDE managed builds: build, flash and debug in the IDE. The
+ELF lands in `Debug/`, so `STM32_Programmer_CLI` can flash it too.
+
+Planned for the driver courses: new projects take their Makefile from the `stm32-new-project`
+skill's assets — `cd` into `stm32/<project>` and:
 
 | Command | Does |
 |---|---|
@@ -46,12 +51,13 @@ assets — `cd` into `stm32/<project>` and:
 
 F5 in VS Code = build, flash, halt at `main` (Cortex-Debug, SVD registers).
 
-### Project conventions (planned)
+### Project conventions
 
 - Bare-metal and register-level: no HAL, no CubeMX, no `.ioc`. Peripheral setup is hand-written,
   which is the point of these courses.
-- Each lesson in its own source file under `Src/`, a thin `main` pointing at the current one, git
-  history as the archive. The rest of the project shape waits until the course's chip is confirmed.
+- Assembly course: one CubeIDE project per lesson in the course folder, named `<n>_<topic>`.
+- Driver courses (planned): each lesson in its own source file under `Src/`, a thin `main` pointing
+  at the current one, git history as the archive.
 - If a project compiles hard-float, `SystemInit` must enable the FPU (CP10/CP11), or newlib printf
   hard-faults. End printf lines `\r\n`.
 

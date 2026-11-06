@@ -10,12 +10,12 @@ CLI-first, every design proven (simulation first, then hardware). Path: docs/cou
 
 - [x] Decision: ARM GNU Assembly course first, then the driver courses, then FPGA (2026-11-05)
 - [x] `stm32/arm-gnu-assembly-programming-from-ground-up/` created (2026-11-05)
-- [ ] Enrolled; the course's chip and IDE confirmed
-- [ ] Project set up in the course folder
+- [x] Course chip confirmed: STM32F411RETx (2026-11-05)
+- [x] First lesson projects created and built in CubeIDE, targeting the L476 (2026-11-05)
+- [ ] NUCLEO-F411RE bought
 - [ ] Assembly sections 1–8: instruction set
 - [ ] Assembly sections 9–13: GPIO, ADC, UART, SysTick and timer drivers
 - [ ] Assembly sections 14–15: FIFO and Moore state machine
-- [ ] NUCLEO-F411RE bought; bring-up verified on the board (LD2 + VCP banner)
 - [ ] Ground Up course
 - [ ] Advanced Bare-Metal course
 - [ ] HAL APIs course
