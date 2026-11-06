@@ -2,18 +2,10 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build microcontroller-embedded-c-programming",
+      "label": "build arm-gnu-assembly-programming-from-ground-up",
       "type": "shell",
       "command": "make build",
-      "options": { "cwd": "${workspaceFolder}/stm32/microcontroller-embedded-c-programming" },
-      "group": "build",
-      "problemMatcher": ["$gcc"]
-    },
-    {
-      "label": "build embedded-system-programming-on-arm-cortex-m3m4",
-      "type": "shell",
-      "command": "make build",
-      "options": { "cwd": "${workspaceFolder}/stm32/embedded-system-programming-on-arm-cortex-m3m4" },
+      "options": { "cwd": "${workspaceFolder}/stm32/arm-gnu-assembly-programming-from-ground-up" },
       "group": { "kind": "build", "isDefault": true },
       "problemMatcher": ["$gcc"]
     }

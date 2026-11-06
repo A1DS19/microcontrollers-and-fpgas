@@ -6,11 +6,69 @@ from Costa Rica, local semiconductor verification as the fallback). One workspac
 directory per course (per-project Makefile). Update the status column as courses advance;
 move finished ones to the log at the bottom.
 
-## Main path — FPGA (in order)
+## Current focus — STM32 courses (in order)
+
+These come before the FPGA path (decided 2026-11-04): code-along courses on a board chosen to
+match the videos. The assembly course comes first (decided 2026-11-05), and one project ties
+the driver courses together.
+
+| # | Course | Status | Project dir |
+|---|--------|--------|-------------|
+| 1 | [ARM GNU Assembly Programming From Ground Up](https://study.embeddedexpert.io/p/arm-gnu-assembly-programming-from-ground-up) (EmbeddedExpertIO) | **next up** | [`stm32/arm-gnu-assembly-programming-from-ground-up/`](../stm32/arm-gnu-assembly-programming-from-ground-up/) |
+| 2 | [Embedded Systems Bare-Metal Programming Ground Up (STM32)](https://www.udemy.com/course/embedded-systems-bare-metal-programming/) (Israel Gbati) | — | — |
+| 3 | [Advanced Embedded Systems Bare-Metal Programming Ground Up](https://www.udemy.com/course/embedded-systems-advance-bare-metal-programming/) | — | — |
+| 4 | [Embedded Systems STM32 HAL APIs Driver Development](https://www.udemy.com/course/embedded-systems-stm32-hal-apis-driver-development/) | — | — |
+
+Bench boards:
+
+- **Assembly course:** not confirmed; the course page names no board or IDE. Lecture titles use
+  `ODR` and `BSRR`, so it's probably an STM32 (inference). Sections 1–8 are instruction set only,
+  so start on the Nucleo-L476RG. Buy a matching board at section 9 if translating the drivers
+  gets in the way.
+- **Driver courses:** NUCLEO-F411RE (to buy).
+
+### ARM GNU Assembly course map
+
+About 15.5 hours (sum of the listed lecture times), including 1h47m of optional C lectures in
+sections 14–15.
+
+| Sections | Covers | Length |
+|---|---|---|
+| 1–8 | Setup, architecture, directives, load/store, constants, arithmetic, branches, stack | 4h40m |
+| 9 | GPIO driver | 1h43m |
+| 10 | ADC driver | 1h26m |
+| 11 | UART driver, printf retargeting | 1h45m |
+| 12 | SysTick driver | 51m |
+| 13 | General-purpose timer driver | 48m |
+| 14 | FIFO | 1h33m |
+| 15 | Moore state machine (traffic light) | 2h41m |
+
+### Project: data logger
+
+One firmware that grows a stage at a time, ending as a logger that shows live readings and
+keeps them after a power cycle. Follow the course section each stage needs, and write each
+driver by hand.
+
+| Stage | Learn | Visible result |
+|---|---|---|
+| 1 | GPIO | A button toggles an LED |
+| 2 | Interrupts (EXTI) | The same button works without polling |
+| 3 | UART | Live logs on the terminal |
+| 4 | Timers and PWM | A steady heartbeat LED and a dimmable LED |
+| 5 | ADC | A potentiometer or temperature reading in the logs |
+| 6 | I2C | Readings on the SSD1306 |
+| 7 | SPI | Readings saved to SPI flash, then read back after a reset |
+| 8 | DMA | Logging keeps running without blocking the CPU |
+| 9 | C++ | The C drivers rewritten as classes |
+
+Later: I2S as a short ESP32 side project (the L476 only has it through SAI), and CAN when a
+project needs it (MCU2 covers it).
+
+## Main path — FPGA (in order, after the driver courses)
 
 | # | Course / phase | Status | Project dir |
 |---|--------|--------|-------------|
-| 1 | FPGA Embedded Design, Part 1 — Verilog (Eduardo Corpeño, Udemy) + HDLBits alongside | **next up** | — |
+| 1 | FPGA Embedded Design, Part 1 — Verilog (Eduardo Corpeño, Udemy) + HDLBits alongside | after the driver courses | — |
 | 2 | FPGA Embedded Design, Part 2 — Basic FPGA Training | — | — |
 | 3 | FPGA Embedded Design, Part 3 — EDA Tools | — | — |
 | 4 | cocotb tutorial (Python testbenches) | — | — |
@@ -37,21 +95,21 @@ Bench board for the FPGA path: Digilent Arty A7-100T (to buy; 100 Mb Ethernet co
 ## Good to know — STM32 / firmware (not on the main path)
 
 Owned courses kept for breadth. Pick one up when a project needs it or for interest; none
-blocks the FPGA path. The first two FastBit steps are done (see Completed).
+blocks the FPGA path.
 
 | Course | Status | Relevance to the FPGA goal |
 |--------|--------|-------------|
-| Mastering Microcontroller and Embedded Driver Development — MCU1 (FastBit) | 1% | Highest of this list: drivers for your own FPGA peripheral on Zynq/soft CPU |
+| Mastering Microcontroller and Embedded Driver Development — MCU1 (FastBit) | Parked 2026-11-04, replaced by the driver courses | Highest of this list: drivers for your own FPGA peripheral on Zynq/soft CPU |
 | Mastering Microcontroller: Timers, PWM, CAN, Low Power — MCU2 (FastBit) | 1% | Low |
 | ARM Cortex M Microcontroller DMA Programming Demystified (FastBit) | 1% | Medium: DMA between CPU and fabric on SoC FPGAs |
 | Mastering RTOS: Hands on FreeRTOS and STM32Fx with Debugging (FastBit) | 2% | Low |
 | STM32Fx Microcontroller Custom Bootloader Development (FastBit) | 1% | Low |
 
-Original order, if this track is resumed: MCU1 → MCU2 → DMA → RTOS → bootloader (RTOS and
-bootloader can swap). Reference alongside MCU1: Communication Protocols: UART, USART, I2C,
+Original order, if this track is resumed: MCU2 → DMA → RTOS → bootloader (RTOS and
+bootloader can swap). Reference alongside the driver courses: Communication Protocols: UART, USART, I2C,
 I3C, SPI, GPIO (Protocol Pro).
 
-### Applied projects (after MCU1)
+### Applied projects (after the driver courses)
 
 - **Embedded Ethernet on STM32 Using W5500** — external SPI TCP/IP chip; runs on the L476RG
   + a cheap W5500 module. Note: the chip hides the stack, which the FPGA Phase 2 builds by hand.
@@ -71,15 +129,12 @@ I3C, SPI, GPIO (Protocol Pro).
 
 ### Hardware notes (STM32)
 
-- Bench board: Nucleo-L476RG. FastBit videos use STM32F407 Discovery / Nucleo-F446 — same
-  Cortex-M4 core, slightly different peripheral versions; adapt via RM0351 instead of
-  copy-typing. That adaptation is a feature, not a bug. Lookup tables:
-  [stm32/docs/f407-vs-l476.md](../stm32/docs/f407-vs-l476.md).
+- Driver courses: NUCLEO-F411RE, chosen so the videos can be typed along with directly.
+- FastBit courses: Nucleo-L476RG. FastBit videos use STM32F407 Discovery / Nucleo-F446 — same
+  Cortex-M4 core, slightly different peripheral versions; adapt via RM0351.
 
 ## Completed
 
 | Course | Finished | Notes |
 |--------|----------|-------|
-| Embedded Systems Programming on ARM Cortex-M3/M4 Processor (FastBit) | 2026-08-30 | One week on the bench. 16 lessons in `stm32/embedded-system-programming-on-arm-cortex-m3m4/` (LESSONS.md is the map): modes, core registers, inline asm, reset, memory map, bit-banding, MSP/PSP, NVIC (+CMSIS), faults, SVC, a from-scratch round-robin scheduler, then `gnu-build/` — own startup file, linker script and Makefile, OpenOCD/GDB, newlib vs nano, semihosting. Every lesson hardware-verified; slide errors caught and documented (VECTPENDING, SVCALLPENDED, EXC_RETURN in the frame's lr slot, tick before PSP). Bonus: 7-segment + SSD1306 side demos, a GDB fault autopsy, and the ST-LINK firmware outage diagnosed with OpenOCD |
-| Microcontroller Embedded C Programming: Absolute Beginners (FastBit) | 2026-08-22 | Register-level on the Nucleo-L476RG, no HAL; one lesson per file in `stm32/microcontroller-embedded-c-programming/` (main.c points at the current one, git is the archive). Bonus beyond the course: 4x4 keypad integration + MCU-as-continuity-tester (keydiag.c) |
 | Curso diseño PCB: Controlador de vuelo para drones Arduino | 2026 (before 2026-08-17) | Fed the drone-flight-controller project; groundwork for the own-FPGA-board track |

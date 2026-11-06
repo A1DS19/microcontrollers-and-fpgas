@@ -73,3 +73,46 @@ Sub-decisions:
 - **Workspace docs (`docs/course-progression.md`) stay at the root**; STM32-only references
   (pinout, RM0351, UM1724, Cortex-M4 PDFs, cli-workflow.md) moved to `stm32/docs/`.
 - **Root `.vscode/` stays** at the workspace root, paths now `${workspaceFolder}/stm32/<project>`.
+
+## 2026-11-04 — STM32 driver courses come before FPGA, on a board that matches the videos
+
+FastBit's concept-first lectures didn't fit a learner who works through code-alongs and
+projects, and translating F407 videos to the L476 gets in the way of typing along. The new
+order is Gbati's Ground Up → Advanced → HAL APIs, then the FPGA path. The final goal is unchanged.
+
+Sub-decisions:
+- **NUCLEO-F411RE is the board for these courses.** The instructor's book uses it and the course
+  listing says "STM32F4-NUCLEO", but no source we could read names the course's exact model.
+  The Nucleo-L476RG stays for the finished projects.
+- **The STM32F3 course was dropped:** it repeats Ground Up's drivers on a third chip.
+- **Starting with the STM32L4 course was rejected:** it needs no new board, but Advanced requires
+  Ground Up, so the basics would be repeated.
+- **CAN is deferred and I2S moves to an ESP32 side project;** neither is a basic.
+- **A data-logger project threads the courses,** because they teach one peripheral at a time.
+
+## 2026-11-05 — ARM GNU Assembly course comes first, ahead of the driver courses
+
+The user chose EmbeddedExpertIO's ARM GNU Assembly Programming From Ground Up as the first
+course of the restart. It's a code-along of about 15.5 hours (sum of the listed lecture times),
+and its instruction-set sections can start on the Nucleo-L476RG already on the bench. It isn't a
+prerequisite for anything on the path. By its lecture titles it has no interrupts, I2C, SPI or
+DMA, so it goes in front of the driver courses and doesn't replace them.
+
+Sub-decisions:
+- **The board stays open.** The course page names no board or IDE. Lecture titles use `ODR` and
+  `BSRR`, which points to an STM32 and away from the earlier TI guess, but the chip is unconfirmed.
+  Sections 1–8 run on the L476; a matching board is only worth buying at section 9.
+- **Only the first course was chosen.** Ground Up → Advanced → HAL APIs carries over from
+  2026-11-04 as the order after it, not reconfirmed.
+
+## 2026-11-05 — Clean slate: `stm32/` stays deleted and the plan starts at the assembly course
+
+The user chose to drop everything under `stm32/` and rebuild the workspace docs around the ARM GNU
+Assembly course. The two finished courses are not retaken and are removed from the docs, so the
+plan reads as starting at the assembly course. Git history is untouched, so the old code and
+reference PDFs stay recoverable from commit `a713127`.
+
+Sub-decisions:
+- **Larger resets were rejected:** deleting `fpga/` and `agents/` as well, or rewriting git history.
+- **This log and `fpga/README.md` were left as they are,** so earlier entries here still mention
+  the finished courses as history.
