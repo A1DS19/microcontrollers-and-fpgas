@@ -13,8 +13,8 @@ _2026-11-05 (ARM GNU Assembly course started)_
   https://claude.ai/artifact/3KywKRgatCkwhvbFjX8PGh
 
 ## State
-- The reset is on `main`. The lesson projects and later doc edits are committed and pushed on
-  `feat/arm-gnu-assembly-project`, not merged.
+- The reset and the first lesson projects are merged to `main` and pushed. New work goes on a
+  fresh feature branch.
 - The reset deleted 154 tracked files, on purpose. Don't restore them unless asked. Commit
   `a713127` keeps them, including the reference PDFs: `git show a713127:stm32/docs/<file>`.
 - The NUCLEO-F411RE listing the user found is the right board. Whether it's been ordered is unknown.
