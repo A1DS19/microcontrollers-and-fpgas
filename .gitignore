@@ -25,4 +25,4 @@ Drivers/
 
 # Eclipse workspace
 .metadata/
-.settings/language.settings.xml
+**/.settings/language.settings.xml

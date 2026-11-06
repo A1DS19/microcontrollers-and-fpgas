@@ -18,11 +18,9 @@ _2026-11-05 (ARM GNU Assembly course started)_
 - The reset deleted 154 tracked files, on purpose. Don't restore them unless asked. Commit
   `a713127` keeps them, including the reference PDFs: `git show a713127:stm32/docs/<file>`.
 - The NUCLEO-F411RE listing the user found is the right board. Whether it's been ordered is unknown.
-- Root `.vscode/` still runs `make build` and expects an ELF in the course folder, so it doesn't work
-  with the CubeIDE projects. Decide whether to retarget or remove it.
-- Each lesson has an auto-generated `.vscode/` from the C/C++ Runner extension, set up for host gdb,
-  so it can't debug the board. `1_not_using_startup/1_using_startup.launch` is a leftover from copying
-  the project and points at the other project.
+- Root `.vscode/` has no `tasks.json` or `launch.json` now; debugging happens in CubeIDE. Each lesson
+  has an auto-generated `.vscode/` from the C/C++ Runner extension, set up for host gdb, so it can't
+  debug the board.
 - `STM32Cube_FW_F4_V1.28.3` and its two zips (about 970 MB) are in `~/STM32Cube/Repository/`.
 
 ## Next session
