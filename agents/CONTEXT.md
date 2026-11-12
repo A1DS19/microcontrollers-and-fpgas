@@ -19,7 +19,8 @@ the chip on the NUCLEO-F411RE.
 
 **Driver courses**:
 Israel Gbati's Ground Up, Advanced and HAL APIs courses, in that order. They follow the ARM GNU
-Assembly course and come before the main path.
+Assembly course and come before the main path. Companion: his book *Bare-Metal Embedded C
+Programming*.
 
 **Data logger**:
 The project that threads the driver courses: one firmware that grows a peripheral at a time.
@@ -29,7 +30,8 @@ Stages in docs/course-progression.md.
 The embedded C and C++ work in `c-c++/`, alongside the STM32 courses: three Udemy courses
 (Embedded C Learn As You Go → Embedded C Programming Design Patterns → Reusable Modules & Unit
 Testing), then the book *C++ in Embedded Systems* by Amar Mahmutbegović. One self-contained
-directory per course or book.
+directory per course or book. Four owned C++ books (CMake, memory management, performance,
+async) are references, read when the path reaches them.
 _Avoid_: putting them under `stm32/`, which holds the STM32 course projects
 
 **Renode**:

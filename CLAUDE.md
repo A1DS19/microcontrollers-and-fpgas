@@ -6,12 +6,14 @@ verification** (HFT-style feed handler in hardware, cocotb-verified). Three area
 - `stm32/` — **current focus**, bare-metal STM32 courses. In progress:
   `stm32/arm-gnu-assembly-programming-from-ground-up/` (ARM GNU Assembly course), worked in
   CubeIDE with one project per lesson, on the Nucleo-L476RG for now (the instructor uses the
-  F411RE). Three driver courses follow it (order in docs/course-progression.md). Other MCU
-  courses are **good-to-know**, not the path.
+  F411RE). Three driver courses follow it, with Gbati's book *Bare-Metal Embedded C Programming*
+  as companion (order in docs/course-progression.md). Other MCU courses are **good-to-know**, not
+  the path.
 - `c-c++/` — embedded C and C++, worked alongside the STM32 courses: Embedded C Learn As You Go →
   Embedded C Programming Design Patterns → Reusable Modules & Unit Testing (Unity + Ceedling) →
   the book *C++ in Embedded Systems* (Mahmutbegović; STM32F072 examples in Renode, via Docker).
-  Order and status in docs/course-progression.md; layout and build in `c-c++/README.md`.
+  Order, timing and status in docs/course-progression.md; layout, build and the owned C++
+  reference books (CMake, memory management, performance, async) in `c-c++/README.md`.
 - `fpga/` — the **main path**, not started; it follows the STM32 courses. Plan, toolchain,
   resources: `fpga/README.md`. First course: Corpeño *FPGA Embedded Design* Part 1 (Verilog) +
   HDLBits — see docs/course-progression.md.

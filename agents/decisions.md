@@ -147,3 +147,17 @@ Sub-decisions:
 - **C for Embedded Systems stays an optional reference, probably skipped:** course 1, the assembly
   course and the driver courses cover most of it. Single lectures are kept for what they don't
   cover (alignment, bitfields, scope and lifetime, casting, MISRA, gcc/gdb on the command line).
+
+## 2026-11-12 — Timing for the C/C++ path, and where the owned books go
+
+Each C/C++ step is tied to a point on the STM32 path: course 1 with assembly sections 1–8,
+course 2 before the Ground Up driver course, course 3 before data logger stage 3 (UART), the C++
+book before stage 9. "Alongside the STM32 courses" alone didn't say when each step happens.
+
+Sub-decisions (book placement proposed by Claude when the user listed the books; open to change):
+- **The four owned C++ books are references, read when the path reaches them:** *Modern CMake
+  for C++* before the first driver-course project (CMake builds); *C++ Memory Management* and
+  *C++ High Performance* after the C++ book; *Asynchronous Programming with C++* last, for
+  PC-side tools only.
+- **Gbati's *Bare-Metal Embedded C Programming* is the driver courses' companion,** by the same
+  instructor, so it sits with the STM32 courses rather than in `c-c++/`.

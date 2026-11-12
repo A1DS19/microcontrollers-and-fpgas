@@ -24,6 +24,9 @@ the STM32F411RETx, the chip on that board. The assembly course's projects are in
 target the Nucleo-L476RG for now: sections 1–8 are instruction set only, so they run on it with
 its own startup and linker files.
 
+Companion book for the driver courses: *Bare-Metal Embedded C Programming* (Israel Gbati, Packt),
+by the same instructor. Read each chapter next to the matching course section.
+
 ### ARM GNU Assembly course map
 
 About 15.5 hours (sum of the listed lecture times), including 1h47m of optional C lectures in
@@ -67,16 +70,32 @@ Worked in parallel with the STM32 courses, in [`c-c++/`](../c-c++/): the languag
 how to structure it, how to test it on the host, then modern C++. What each covers:
 [../c-c++/README.md](../c-c++/README.md).
 
-| # | Course | Length | Status | Project dir |
-|---|--------|--------|--------|-------------|
-| 1 | [Embedded C: Learn As You Go](https://www.udemy.com/course/embedded-c-learn-as-you-go/) | 6h | — | — |
-| 2 | [Embedded C Programming Design Patterns](https://www.udemy.com/course/embedded-c-programming-design-patterns/) | 6h | — | — |
-| 3 | [Embedded C: Reusable Modules & Unit Testing](https://www.udemy.com/course/embedded-c-reusable-modules-unit-testing/) (Unity + Ceedling) | 2.5h | — | — |
-| 4 | *C++ in Embedded Systems: A Practical Transition from C to Modern C++* (book, Amar Mahmutbegović, Packt) | 18 chapters | — | — |
+| # | Course | Length | When | Status | Project dir |
+|---|--------|--------|------|--------|-------------|
+| 1 | [Embedded C: Learn As You Go](https://www.udemy.com/course/embedded-c-learn-as-you-go/) | 6h | Now, with assembly sections 1–8 | — | — |
+| 2 | [Embedded C Programming Design Patterns](https://www.udemy.com/course/embedded-c-programming-design-patterns/) | 6h | Before the Ground Up driver course | — | — |
+| 3 | [Embedded C: Reusable Modules & Unit Testing](https://www.udemy.com/course/embedded-c-reusable-modules-unit-testing/) (Unity + Ceedling) | 2.5h | Before data logger stage 3 (UART) | — | — |
+| 4 | *C++ in Embedded Systems: A Practical Transition from C to Modern C++* (book, Amar Mahmutbegović, Packt) | 18 chapters | Before data logger stage 9 (C++) | — | — |
 
-The book's C++ HAL chapter is what stage 9 of the data logger needs. Optional reference, probably
-skipped: [C for Embedded Systems](https://www.udemy.com/course/c-for-embedded-systems/) (Udemy),
-for single lectures only.
+Why that timing: course 1 and assembly sections 1–8 are both about what happens in memory, and
+neither needs new hardware. Course 2's opaque handles and virtual APIs shape how the drivers get
+written. Course 3 builds the tested ring buffer that UART logging needs, and repeats assembly
+sections 14–15 (FIFO, state machine) in C. The book's C++ HAL chapter is what stage 9 needs.
+
+### Reference books (owned)
+
+Read when the path reaches them, not cover to cover up front. What each covers:
+[../c-c++/README.md](../c-c++/README.md).
+
+| Book | When |
+|---|---|
+| *Modern CMake for C++* (Rafał Świdziński) | Before the first driver-course project, which is planned as a CMake build; the C++ book's examples build with CMake too |
+| *C++ Memory Management* (Patrice Roy) | After the C++ book |
+| *C++ High Performance* (Björn Andrist, Viktor Sehr) | After the C++ book, before the FPGA path, where Verilator harnesses are C++ |
+| *Asynchronous Programming with C++* (Javier Reguera-Salgado) | Last, and only for PC-side tools, such as a UDP replay tool for the feed handler |
+
+Optional, probably skipped: [C for Embedded Systems](https://www.udemy.com/course/c-for-embedded-systems/)
+(Udemy), for single lectures only.
 
 ## Main path — FPGA (in order, after the driver courses)
 

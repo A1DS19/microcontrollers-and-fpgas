@@ -31,6 +31,28 @@ it is covered by course 1, the assembly course and the driver courses. Single le
 it for what nothing else covers: memory alignment, bitfields, scope and lifetime, type casting,
 `#`/`##` macros, MISRA, and gcc/gdb on the command line.
 
+When each step happens: [docs/course-progression.md](../docs/course-progression.md).
+
+## Reference books (owned)
+
+Read when the path reaches them, not cover to cover up front.
+
+- ***Modern CMake for C++*** (Rafał Świdziński). None of the courses teach CMake, but the
+  driver-course projects are planned as CMake builds and the C++ book's examples use it. Read the
+  basics before the first driver-course project.
+- ***C++ Memory Management*** (Patrice Roy). Object lifetime, RAII, smart pointers and custom
+  allocation such as arenas: the techniques embedded C++ uses to avoid the general heap. After
+  the C++ book.
+- ***C++ High Performance*** (Björn Andrist, Viktor Sehr). Move semantics, containers and
+  algorithms, cache-friendly data, measuring performance: the general C++ the embedded book gives
+  less room to. After the C++ book, before the FPGA path, where Verilator harnesses are C++.
+- ***Asynchronous Programming with C++*** (Javier Reguera-Salgado). Threads, futures, coroutines
+  and Boost.Asio on a PC. Not for microcontrollers; last, for PC-side tools that talk to the FPGA
+  over the network.
+
+Gbati's *Bare-Metal Embedded C Programming* is the driver courses' companion, so it's listed with
+the STM32 courses, not here.
+
 ## Layout
 
 One directory per course or book, named after its URL slug (the book's after its code repo:
