@@ -1,9 +1,10 @@
 # microcontrollers-and-fpgas — Context
 
 Hardware learning workspace, driven entirely from the CLI. `stm32/` holds the current STM32
-courses; `fpga/` is the main path that follows them (final goal: low-latency FPGA networking +
-design verification). One directory per online-course project, each self-contained with its own
-build (no workspace-level build plumbing).
+courses; `c-c++/` holds embedded C and C++ practice alongside them; `fpga/` is the main path that
+follows them (final goal: low-latency FPGA networking + design verification). One directory per
+course project or exercise set, each self-contained with its own build (no workspace-level build
+plumbing).
 
 **Main path**:
 The FPGA track in `fpga/` and docs/course-progression.md — Corpeño's Verilog series, cocotb,
@@ -23,6 +24,21 @@ Assembly course and come before the main path.
 **Data logger**:
 The project that threads the driver courses: one firmware that grows a peripheral at a time.
 Stages in docs/course-progression.md.
+
+**C/C++ path**:
+The embedded C and C++ work in `c-c++/`, alongside the STM32 courses: three Udemy courses
+(Embedded C Learn As You Go → Embedded C Programming Design Patterns → Reusable Modules & Unit
+Testing), then the book *C++ in Embedded Systems* by Amar Mahmutbegović. One self-contained
+directory per course or book.
+_Avoid_: putting them under `stm32/`, which holds the STM32 course projects
+
+**Renode**:
+Antmicro's open-source emulator for microcontroller boards. Runs the C++ book's STM32F072
+examples without hardware, inside the author's Docker image.
+
+**Ceedling**:
+Ruby-based build and test runner around the Unity C test framework. Course 3's tool for running
+unit tests on the host, without the board.
 
 **Good-to-know track**:
 The other STM32/firmware courses (MCU1, MCU2, DMA, RTOS, bootloader, Zephyr, Embedded Linux,

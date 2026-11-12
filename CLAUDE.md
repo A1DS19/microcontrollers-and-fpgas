@@ -1,18 +1,30 @@
 # microcontrollers-and-fpgas
 
 Hardware learning workspace, CLI-first. **Final goal: low-latency FPGA networking + design
-verification** (HFT-style feed handler in hardware, cocotb-verified). Two areas:
+verification** (HFT-style feed handler in hardware, cocotb-verified). Three areas:
 
 - `stm32/` — **current focus**, bare-metal STM32 courses. In progress:
   `stm32/arm-gnu-assembly-programming-from-ground-up/` (ARM GNU Assembly course), worked in
   CubeIDE with one project per lesson, on the Nucleo-L476RG for now (the instructor uses the
   F411RE). Three driver courses follow it (order in docs/course-progression.md). Other MCU
   courses are **good-to-know**, not the path.
+- `c-c++/` — embedded C and C++, worked alongside the STM32 courses: Embedded C Learn As You Go →
+  Embedded C Programming Design Patterns → Reusable Modules & Unit Testing (Unity + Ceedling) →
+  the book *C++ in Embedded Systems* (Mahmutbegović; STM32F072 examples in Renode, via Docker).
+  Order and status in docs/course-progression.md; layout and build in `c-c++/README.md`.
 - `fpga/` — the **main path**, not started; it follows the STM32 courses. Plan, toolchain,
   resources: `fpga/README.md`. First course: Corpeño *FPGA Embedded Design* Part 1 (Verilog) +
   HDLBits — see docs/course-progression.md.
 
 Every project directory is self-contained with its own build; the root has no build plumbing.
+
+## C/C++ practice conventions
+
+- One directory per course or book under `c-c++/`, named after its URL slug (the book:
+  `cpp-in-embedded-systems`), each with its own build. Lesson layout inside one is decided when it
+  starts.
+- Host exercises build with the Mac's compilers (`gcc`/`g++` are Apple clang; `gcc-15` is
+  Homebrew GCC). Exercises that touch registers follow the STM32 project conventions below.
 
 ## FPGA conventions (planned)
 

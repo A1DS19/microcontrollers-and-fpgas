@@ -61,6 +61,23 @@ driver by hand.
 Later: I2S as a short ESP32 side project (the L476 only has it through SAI), and CAN when a
 project needs it (MCU2 covers it).
 
+## Alongside — embedded C and C++ (in order)
+
+Worked in parallel with the STM32 courses, in [`c-c++/`](../c-c++/): the language first, then
+how to structure it, how to test it on the host, then modern C++. What each covers:
+[../c-c++/README.md](../c-c++/README.md).
+
+| # | Course | Length | Status | Project dir |
+|---|--------|--------|--------|-------------|
+| 1 | [Embedded C: Learn As You Go](https://www.udemy.com/course/embedded-c-learn-as-you-go/) | 6h | — | — |
+| 2 | [Embedded C Programming Design Patterns](https://www.udemy.com/course/embedded-c-programming-design-patterns/) | 6h | — | — |
+| 3 | [Embedded C: Reusable Modules & Unit Testing](https://www.udemy.com/course/embedded-c-reusable-modules-unit-testing/) (Unity + Ceedling) | 2.5h | — | — |
+| 4 | *C++ in Embedded Systems: A Practical Transition from C to Modern C++* (book, Amar Mahmutbegović, Packt) | 18 chapters | — | — |
+
+The book's C++ HAL chapter is what stage 9 of the data logger needs. Optional reference, probably
+skipped: [C for Embedded Systems](https://www.udemy.com/course/c-for-embedded-systems/) (Udemy),
+for single lectures only.
+
 ## Main path — FPGA (in order, after the driver courses)
 
 | # | Course / phase | Status | Project dir |

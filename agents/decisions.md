@@ -130,3 +130,20 @@ The user created the first lesson projects in CubeIDE, one project per lesson, t
 STM32L476RG. This keeps the course close to the videos and starts it without waiting for a new
 board. "No IDE in the loop" no longer holds for this course; the Makefile plan stays for the
 driver courses.
+
+## 2026-11-12 — `c-c++/` holds three embedded C courses and a C++ book
+
+The user added `c-c++/` at the root for embedded C and C++ practice, a third area beside `stm32/`
+and `fpga/`, worked alongside the STM32 courses. The user chose three Udemy courses, in order:
+Embedded C: Learn As You Go (language), Embedded C Programming Design Patterns (structure), and
+Embedded C: Reusable Modules & Unit Testing (host testing with Unity and Ceedling). C++ comes
+after them from a book the user owns, *C++ in Embedded Systems* by Amar Mahmutbegović, because
+no C++ course was found.
+
+Sub-decisions:
+- **One directory per course or book**, named after its URL slug, like the STM32 and FPGA courses.
+- **Intro to C Programming for Aspiring Embedded Developers was rejected:** it teaches C from zero
+  to Java/Python programmers, repeating course 1, and ends on the ATmega328p, off the ARM path.
+- **C for Embedded Systems stays an optional reference, probably skipped:** course 1, the assembly
+  course and the driver courses cover most of it. Single lectures are kept for what they don't
+  cover (alignment, bitfields, scope and lifetime, casting, MISRA, gcc/gdb on the command line).

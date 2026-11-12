@@ -21,6 +21,16 @@ CLI-first, every design proven (simulation first, then hardware). Path: docs/cou
 - [ ] HAL APIs course
 - [ ] Data logger project (stages in docs/course-progression.md)
 
+## Milestones — embedded C and C++ (alongside the STM32 courses)
+
+- [x] `c-c++/` created; three C courses and a C++ book chosen (2026-11-12)
+- [ ] Embedded C: Learn As You Go
+- [ ] Embedded C Programming Design Patterns
+- [ ] Ruby 3 + Ceedling installed
+- [ ] Embedded C: Reusable Modules & Unit Testing
+- [ ] Book's Docker image running, Chapter 4's example running in Renode
+- [ ] *C++ in Embedded Systems* (book)
+
 ## Milestones — FPGA era (main path, after the driver courses)
 
 - [ ] Board bought (Arty A7-100T) + toolchain installed (Verilator, Icarus, GTKWave, cocotb, Vivado)

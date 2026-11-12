@@ -15,6 +15,10 @@ Release/
 build/
 compile_commands.json
 
+# Host C/C++ builds (c-c++/): a.out and macOS debug-symbol bundles
+*.out
+*.dSYM/
+
 # Tool caches (clangd, etc.)
 .cache/
 
